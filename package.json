@@ -15,5 +15,9 @@
   "bugs": {
     "url": "https://github.com/comp426-2022-fall/a04-rsericks/issues"
   },
-  "homepage": "https://github.com/comp426-2022-fall/a04-rsericks#readme"
+  "homepage": "https://github.com/comp426-2022-fall/a04-rsericks#readme",
+  "dependencies": {
+    "express": "^4.18.2",
+    "minimist": "^1.2.7"
+  }
 }
