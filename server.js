@@ -12,23 +12,18 @@ app.get('/app', (req, res) => {
     res.end();
 })
 
-app.use((req, res, next) =>{
-    res.status(404).send("404 NOT FOUND");
-    res.end();
-})
-
 app.get('/app/roll',  (req, res, next) =>{
     res.send(roll(6,2,1));
     res.end();
 })
 
-app.get('/app/roll/:sides/:dice', (req, res, next) =>{
-    res.send(roll(parseInt(req.params.sides), parseInt(req.params.dice), 1));
+app.get('/app/roll/:sides', (req, res, next) => {
+    res.send(roll(parseInt(req.params.sides), 2, 1));
     res.end();
 })
 
-app.get('/app/roll/:sides', (req, res, next) => {
-    res.send(roll(parseInt(req.params.sides), 2, 1));
+app.get('/app/roll/:sides/:dice', (req, res, next) =>{
+    res.send(roll(parseInt(req.params.sides), parseInt(req.params.dice), 1));
     res.end();
 })
 
@@ -42,6 +37,11 @@ app.use('/app/roll' , (req, res, next) => {
     var diceint = req.params.dice ? parseInt(req.params.dice) : 2;
     var rollint = req.params.rolls ? parseInt(req.params.rolls) : 1;
     res.send(roll(sidesint, diceint, rollint));
+    res.end();
+})
+
+app.use((req, res, next) =>{
+    res.status(404).send("404 NOT FOUND");
     res.end();
 })
 
