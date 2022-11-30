@@ -41,7 +41,7 @@ app.use('/app/roll' , (req, res, next) => {
     var sidesint = req.params.sides ? parseInt(req.params.sides) : 6;
     var diceint = req.params.dice ? parseInt(req.params.dice) : 2;
     var rollint = req.params.rolls ? parseInt(req.params.rolls) : 1;
-    res.send(roll(sidesint, diceint, rollsint));
+    res.send(roll(sidesint, diceint, rollint));
     res.end();
 })
 
